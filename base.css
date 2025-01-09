@@ -1,31 +1,42 @@
 html,
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    box-sizing: border-box;
+
 }
 
 body {
     background-color: #f1f1f1;
     display: flex;
     justify-content: center;
+    align-items: stretch;
+    min-height: 100vh;
+
+
 }
 
 .wrapper {
-    width: 1200px;
+    width: 100%;
     display: flex;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: aquamarine;
-
+    flex-grow: 1;
 }
 
 .main {
     display: flex;
-    flex-flow: column;
-    width: 85%;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+
 }
 
 .menu {
-    width: 15%;
+    width: 250px;
     background-color: aqua;
     padding: 10px 20px 0px;
     background-image: url(como-montar-uma-clinica-veterinaria.webp);
@@ -45,6 +56,7 @@ body {
     background-color: white;
     min-height: 300px;
     padding: 20px;
+    flex-grow: 1;
 }
 
 .footer {
@@ -66,8 +78,9 @@ body {
 .footer div {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     gap: 10px;
+    justify-content: center;
 }
 
 .footer svg {
@@ -80,21 +93,6 @@ body {
     font-style: normal;
     color: #555;
     font-size: 1rem;
-}
-
-.menu button {
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-color: aquamarine;
-
-}
-
-.menu a {
-    text-decoration: none;
-}
-
-.menu ul {
-    list-style: none;
 }
 
 .content table {
@@ -111,6 +109,56 @@ body {
     background-color: black;
     color: white;
     empty-cells: show;
+
+}
+
+.menu button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.content table th {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.content table td {
+    border: 1px solid black;
+    padding: 10px;
 }
 
 table tr:nth-child(even) td {
@@ -119,4 +167,39 @@ table tr:nth-child(even) td {
 
 table tbody tr:hover td {
     background-color: cadetblue;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu button {
+        padding: 8px;
+    }
+
+    .menu a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .footer i {
+        font-size: 0.8rem;
+    }
 }
