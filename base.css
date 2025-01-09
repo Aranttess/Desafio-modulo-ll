@@ -8,6 +8,11 @@ body {
 
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     background-color: #f1f1f1;
     display: flex;
@@ -314,4 +319,48 @@ iframe {
     border: none;
     height: auto;
     min-height: 450px;
+}
+
+
+
+@media (max-width: 480px) {
+    .header {
+        min-height: 100px;
+        font-size: 1rem;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .menu ul {
+        gap: 5px;
+    }
+
+    .menu a {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .footer h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    form input,
+    form textarea {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    form button {
+        padding: 8px;
+        font-size: 12px;
+    }
 }
